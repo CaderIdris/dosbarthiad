@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=42.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+addopts = "--cov=dosbarthiad tests/ --cov-report html --html=report.html --self-contained-html"
+testpaths = [
+	"tests",
+]
+markers = [
+	"clean: data cleaning",
+	"decompose: dimensional reduction",
+	"predict: classification algorithms",
+	"cluster: clustering algorithms",
+	"sample: sample data"
+]
+
+[tool.mypy]
+mypy_path = "src"
+warn_return_any = false
+check_untyped_defs = true
+disallow_any_generics = true
+ignore_missing_imports = true
+no_implicit_optional = true
+show_error_codes = true
+strict_equality = true
+warn_redundant_casts = true
+warn_unreachable = true
+warn_unused_configs = true
+no_implicit_reexport = true
